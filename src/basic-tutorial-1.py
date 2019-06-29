@@ -8,9 +8,9 @@ def get_message_from_bus(gst_bus):
     return gst_bus.timed_pop_filtered(Gst.CLOCK_TIME_NONE, Gst.MessageType.ANY)
 
 if __name__ == '__main__':
+    print('declaring variables of classes inherits from Gst.Object that should be unreferenced')
     gst_element = None
     gst_bus = None
-    gst_message = None
 
     # https://lazka.github.io/pgi-docs/#Gst-1.0/functions.html#Gst.init
     print('initializing Gst...')
@@ -47,6 +47,8 @@ if __name__ == '__main__':
 
     # set state NULL
     print('disposing the pipeline...')
+    gst_bus.unref()
     gst_element.set_state(Gst.State.NULL)
+    gst_element.unref()
 
     print('finished running hellow world example')
