@@ -73,4 +73,4 @@ if __name__ == '__main__':
     pipeline.set_state(Gst.State.NULL)
     pipeline.unref()
 
-    print('finished running hellow world example')
+    print('finished running manual hellow world example')
