@@ -141,9 +141,9 @@ class CustomData():
                     print('this should not happen, the received message type is unexpectedly {}'.format(message_type))
 
     def dispose(self):
-        # call unref(), but which will leave many CRITICAL error messages as follows...
+        # not call unref(), but which will leave many CRITICAL error messages as follows...
         # (python3:772): GLib-GObject-CRITICAL **: 08:49:46.297: g_object_unref: assertion 'G_IS_OBJECT (object)' failed
-        print('disposig customData...')
+        print('disposing customData...')
         if self._pipeline is None:
             return
         self._pipeline.set_state(Gst.State.NULL)
