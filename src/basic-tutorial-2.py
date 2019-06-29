@@ -32,7 +32,7 @@ if __name__ == '__main__':
     pipeline.add(sink)
     if not source.link(sink):
         print('failed to link')
-        pipeline.unref()
+        pipeline.set_state(Gst.State.NULL)
         sys.exit(1)
 
     # https://lazka.github.io/pgi-docs/#GObject-2.0/classes/Object.html#GObject.Object.set_property
@@ -45,7 +45,7 @@ if __name__ == '__main__':
     gst_state_change_return = pipeline.set_state(Gst.State.PLAYING)
     if gst_state_change_return == Gst.StateChangeReturn.FAILURE:
         print('failed to play')
-        pipeline.unref()
+        pipeline.set_state(Gst.State.NULL)
         sys.exit(1)
 
     # https://lazka.github.io/pgi-docs/#Gst-1.0/classes/Element.html#Gst.Element.get_bus
@@ -69,8 +69,6 @@ if __name__ == '__main__':
     # call unref(), but which will leave many CRITICAL error messages as follows...
     # (python3:772): GLib-GObject-CRITICAL **: 08:49:46.297: g_object_unref: assertion 'G_IS_OBJECT (object)' failed
     print('disposing the pipeline...')
-    gst_bus.unref()
     pipeline.set_state(Gst.State.NULL)
-    pipeline.unref()
 
     print('finished running manual hellow world example')

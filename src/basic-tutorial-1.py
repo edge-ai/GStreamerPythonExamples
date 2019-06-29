@@ -46,11 +46,11 @@ if __name__ == '__main__':
 
 
     # set state NULL
-    # call unref(), but which will leave many CRITICAL error messages as follows...
+    # no need to call unref(), which will leave many CRITICAL error messages as follows...
     # (python3:772): GLib-GObject-CRITICAL **: 08:49:46.297: g_object_unref: assertion 'G_IS_OBJECT (object)' failed
     print('disposing the pipeline...')
-    gst_bus.unref()
+    #gst_bus.unref()
     gst_element.set_state(Gst.State.NULL)
-    gst_element.unref()
+    #gst_element.unref()
 
     print('finished running hellow world example')
