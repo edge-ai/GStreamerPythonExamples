@@ -4,7 +4,6 @@ gi.require_version('Gst', '1.0')
 from gi.repository import Gst
 
 if __name__ == '__main__':
-    print('declaring variables of classes inherits from Gst.Object that should be unreferenced')
     pipeline = None
     gst_bus = None
 

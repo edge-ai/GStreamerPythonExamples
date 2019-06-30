@@ -150,8 +150,6 @@ class CustomData():
         #self._pipeline.unref()
 
 if __name__ == '__main__':
-    print('declaring variables of classes inherits from Gst.Object that should be unreferenced')
-    gst_bus = None
     customData = CustomData()
     
     # https://lazka.github.io/pgi-docs/#Gst-1.0/functions.html#Gst.init

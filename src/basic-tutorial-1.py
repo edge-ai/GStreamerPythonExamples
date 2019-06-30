@@ -8,7 +8,6 @@ def get_message_from_bus(gst_bus):
     return gst_bus.timed_pop_filtered(Gst.CLOCK_TIME_NONE, Gst.MessageType.ANY)
 
 if __name__ == '__main__':
-    print('declaring variables of classes inherits from Gst.Object that should be unreferenced')
     gst_element = None
     gst_bus = None
 
