@@ -17,7 +17,7 @@ if __name__ == '__main__':
 
     # https://lazka.github.io/pgi-docs/#Gst-1.0/functions.html#Gst.parse_launch
     print('building a pipeline...')
-    gst_element = Gst.parse_launch("playbin uri=https://www.freedesktop.org/software/gstreamer-sdk/data/media/sintel_trailer-480p.webm")
+    gst_element = Gst.parse_launch("playbin uri=https://www.freedesktop.org/software/gstreamer-sdk/data/media/sintel_trailer-480p.webm video-sink=glimagesink")
     if gst_element == None:
         print('failed to build a pipeline')
         sys.exit(1)

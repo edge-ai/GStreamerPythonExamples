@@ -32,6 +32,7 @@ class CustomData():
         # https://lazka.github.io/pgi-docs/#GObject-2.0/classes/Object.html#GObject.Object.set_property
         print('modifying the source properties...')
         self._playbin.set_property('uri', 'https://www.freedesktop.org/software/gstreamer-sdk/data/media/sintel_trailer-480p.webm')
+        self._playbin.set_property('video-sink', Gst.ElementFactory.make("glimagesink", "glimagesink"))
 
     def play_pipeline(self):
         # https://lazka.github.io/pgi-docs/#Gst-1.0/classes/Element.html#Gst.Element.set_state
