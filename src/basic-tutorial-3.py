@@ -87,6 +87,8 @@ class CustomData():
             # error Internal data stream error. happened at /dvs/git/dirty/git-master_linux/3rdparty/gst/gst-omx/omx/gstomxvideodec.c(3000): 
             # gst_omx_video_dec_loop (): /GstPipeline:test-pipeline/GstURIDecodeBin:source/GstDecodeBin:decodebin0/GstOMXVP8Dec-omxvp8dec:omxvp8dec-omxvp8dec0: 
             # stream stopped, reason not-linked
+            # ==> RESOLVED
+            # This issue was raised when this program is executed on Jetson TX2 that has no audio.
             print('It has type {} which is not raw audio, ignoring...'.format(new_pad_type))
             return
 
